@@ -11,7 +11,6 @@ Resources:
   MinecraftServerInstance:
     Type: AWS::EC2::Instance
     Properties:
-      Name: !Sub "minecraft-server-${UUID}"
       InstanceType: t2.medium
       ImageId: ami-0abcdef1234567890
       KeyName: MyKeyPair
