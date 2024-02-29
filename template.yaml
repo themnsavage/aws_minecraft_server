@@ -13,7 +13,7 @@ Resources:
     Properties:
       InstanceType: t2.medium
       ImageId: ami-07761f3ae34c4478d 
-      KeyName: KeyPair
+      KeyName: !Ref KeyPair 
       SecurityGroupIds:
         - Ref: MinecraftSecurityGroup
 
