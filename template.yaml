@@ -21,7 +21,6 @@ Resources:
   MinecraftSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      Name: !Sub "mincraft-server-security-group-${UUID}"
       GroupDescription: Allow Minecraft server access
       SecurityGroupIngress:
         - IpProtocol: tcp
