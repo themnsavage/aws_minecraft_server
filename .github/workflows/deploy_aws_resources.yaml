@@ -1,7 +1,7 @@
+name: Deploy SAM Application
+
 on:
-  push:
-    branches-ignore:
-      - master 
+  workflow_dispatch:
 
 jobs:
   deploy:
