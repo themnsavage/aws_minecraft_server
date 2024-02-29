@@ -36,4 +36,10 @@ jobs:
         run: sam build
 
       - name: SAM Deploy
-        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name "minecraft-${{ env.UUID }}" --capabilities CAPABILITY_IAM --parameter-overrides UUID=${{ env.UUID }} $KeyName=${{ secrets.KEY_NAME }}
+          run: >
+            sam deploy
+            --no-confirm-changeset
+            --no-fail-on-empty-changeset
+            --stack-name "minecraft-${{ env.UUID }}"
+            --capabilities CAPABILITY_IAM
+            --parameter-overrides UUID=${{ env.UUID }} KeyName=${{ secrets.KEY_NAME }}
