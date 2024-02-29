@@ -12,7 +12,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.medium
-      ImageId: ami-0abcdef1234567890
+      ImageId: ami-07761f3ae34c4478d 
       KeyName: MyKeyPair
       SecurityGroupIds:
         - Ref: MinecraftSecurityGroup
