@@ -2,7 +2,7 @@ Parameters:
   UUID:
     Type: String
     Description: A unique UUID for resource naming
-  KeyName:
+  KeyPair:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
     ConstraintDescription: Must be the name of an existing EC2 KeyPair.
@@ -13,7 +13,7 @@ Resources:
     Properties:
       InstanceType: t2.medium
       ImageId: ami-07761f3ae34c4478d 
-      KeyName: MyKeyPair
+      KeyName: KeyPair
       SecurityGroupIds:
         - Ref: MinecraftSecurityGroup
 
