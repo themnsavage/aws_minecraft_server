@@ -1,4 +1,7 @@
 Parameters:
+  UUID:
+    Type: String
+    Description: A unique UUID for resource naming
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
@@ -8,6 +11,7 @@ Resources:
   MinecraftServerInstance:
     Type: AWS::EC2::Instance
     Properties:
+      Name: !Sub "minecraft-server-${UUID}"
       InstanceType: t2.medium
       ImageId: ami-0abcdef1234567890
       KeyName: MyKeyPair
@@ -17,6 +21,7 @@ Resources:
   MinecraftSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
+      Name: !Sub "mincraft-server-security-group-${UUID}"
       GroupDescription: Allow Minecraft server access
       SecurityGroupIngress:
         - IpProtocol: tcp
