@@ -42,4 +42,4 @@ jobs:
           --no-fail-on-empty-changeset
           --stack-name "minecraft-${{ env.UUID }}"
           --capabilities CAPABILITY_IAM
-          --parameter-overrides UUID=${{ env.UUID }} KeyPair=${{ secrets.KEY_NAME }}  HostIp=${{ secrets.HOST_IP }}
+          --parameter-overrides UUID=${{ env.UUID }} KeyPair=${{ secrets.KEY_NAME }}  HostIp=${{ secrets.HOST_IP }}/32
