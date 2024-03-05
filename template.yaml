@@ -16,6 +16,17 @@ Resources:
       KeyName: !Ref KeyPair 
       SecurityGroupIds:
         - Ref: MinecraftSecurityGroup
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install java-1.8.0 -y
+          yum remove java-1.7.0-openjdk -y
+          mkdir /minecraft
+          cd /minecraft
+          wget https://launcher.mojang.com/v1/objects/f1a0073671057f01aa843443fef34330281333ce/server.jar -O minecraft_server.jar
+          echo "eula=true" > eula.txt
+          java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
 
   MinecraftSecurityGroup:
     Type: AWS::EC2::SecurityGroup
